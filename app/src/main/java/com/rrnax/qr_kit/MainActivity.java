@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_navigation, R.string.close_navigation);
         drawerLayout.addDrawerListener(toggle);
         toggle.getDrawerArrowDrawable().setColor(ContextCompat.getColor(this, R.color.darker_blue));
+        toggle.getDrawerArrowDrawable().setBarLength(90.0f);
+        toggle.getDrawerArrowDrawable().setBarThickness(15.0f);
+        toggle.getDrawerArrowDrawable().setGapSize(15.0f);
+
         toggle.syncState();
 
         if (savedInstanceState == null){
